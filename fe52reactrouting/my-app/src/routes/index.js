@@ -9,7 +9,7 @@ const routesHome = [
     component: HomePage,
   },
   {
-    exact: false,
+    exact: true,
     path: "/about",
     component: AboutPage,
   },

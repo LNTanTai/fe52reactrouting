@@ -4,28 +4,32 @@ import { Link, NavLink } from "react-router-dom";
 export default class index extends Component {
   render() {
     return (
-      <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
-        <ul class="navbar-nav">
-          <a class="navbar-brand" href="#">
+      <nav className="navbar navbar-expand-sm bg-dark justify-content-center">
+        <ul className="navbar-nav">
+          <a className="navbar-brand" href="#">
             Nav Bar
           </a>
-          <li class="nav-item">
-            <NavLink exact activeClassName="active" class="nav-link" to="/">
+          <li className="nav-item">
+            <NavLink exact activeclassname="active" className="nav-link" to="/">
               Home
             </NavLink>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <NavLink
               exact
-              activeClassName="active"
-              class="nav-link"
+              activeclassname="active"
+              className="nav-link"
               to="/about"
             >
               About
             </NavLink>
           </li>
-          <li class="nav-item">
-            <NavLink activeClassName="active" class="nav-link" to="/about/list">
+          <li className="nav-item">
+            <NavLink
+              activeclassname="active"
+              className="nav-link"
+              to="/about/list"
+            >
               List Movie
             </NavLink>
           </li>
