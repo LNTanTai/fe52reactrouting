@@ -19,3 +19,5 @@ const routesHome = [
     component: ListMoviePage,
   },
 ];
+
+export default routesHome;
