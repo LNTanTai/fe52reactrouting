@@ -1,7 +1,7 @@
 import {
-  LIST_MOVIE_REQUEST,
-  LIST_MOVIE_FAILED,
-  LIST_MOVIE_SUCCESS,
+  DETAIL_PAGE_REQUEST,
+  DETAIL_PAGE_SUCCESS,
+  DETAIL_PAGE_FAILED,
 } from "./constant";
 
 let initialState = {
@@ -10,24 +10,24 @@ let initialState = {
   error: null,
 };
 
-const listMovieReducer = (state = initialState, action) => {
+const detailPageReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LIST_MOVIE_REQUEST:
+    case DETAIL_PAGE_REQUEST:
       state.loading = true;
       state.data = null;
       state.error = null;
       return { ...state };
 
-    case LIST_MOVIE_SUCCESS:
+    case DETAIL_PAGE_SUCCESS:
       state.loading = false;
       state.data = action.payload;
-      state.err = null;
+      state.error = null;
       return { ...state };
 
-    case LIST_MOVIE_FAILED:
+    case DETAIL_PAGE_FAILED:
       state.loading = false;
       state.data = null;
-      state.err = action.payload;
+      state.error = action.payload;
       return { ...state };
 
     default:
@@ -35,4 +35,4 @@ const listMovieReducer = (state = initialState, action) => {
   }
 };
 
-export default listMovieReducer;
+export default detailPageReducer;

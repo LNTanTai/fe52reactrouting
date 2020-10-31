@@ -1,6 +1,7 @@
 import HomePage from "./../containers/HomeTemplate/Homepage";
 import AboutPage from "./../containers/HomeTemplate/AboutPage";
 import ListMoviePage from "./../containers/HomeTemplate/ListMoviePage";
+import DetailPage from "./../containers/HomeTemplate/DetailPage";
 
 const routesHome = [
   {
@@ -17,6 +18,11 @@ const routesHome = [
     exact: false,
     path: "/about/list",
     component: ListMoviePage,
+  },
+  {
+    exact: false,
+    path: "/detail/:id",
+    component: DetailPage,
   },
 ];
 
