@@ -6,18 +6,44 @@ import ListMoviePage from "./containers/HomeTemplate/ListMoviePage";
 import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
 import PageNotFound from "./containers/PageNotFound/index";
 import NavbarHome from "./components/navbarHome";
-import routesHome from "./routes";
+import { routesHome, routesAdmin } from "./routes";
+import NavbarAdmin from "./components/NavbarAdmin/index";
+
+import HomeTemplate from "./containers/HomeTemplate";
+import AdminTemplate from "./containers/AdminTemplate";
+import AuthPage from "./containers/AdminTemplate/AuthPage";
 
 function App() {
   const showLayoutHome = (routes) => {
     if (routes && routes.length > 0) {
       return routes.map((item, index) => {
         return (
-          <Route
+          // <Route
+          //   key={index}
+          //   exact={item.exact}
+          //   path={item.path}
+          //   component={item.component}
+          // />
+          <HomeTemplate
             key={index}
             exact={item.exact}
             path={item.path}
-            component={item.component}
+            Component={item.component}
+          />
+        );
+      });
+    }
+  };
+
+  const showLayoutAdmin = (routes) => {
+    if (routes && routes.length > 0) {
+      return routes.map((item, index) => {
+        return (
+          <AdminTemplate
+            key={index}
+            exact={item.exact}
+            path={item.path}
+            Component={item.component}
           />
         );
       });
@@ -26,7 +52,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavbarHome />
+      {/* <NavbarHome /> */}
+      {/* <NavbarAdmin /> */}
       <div>
         <Switch>
           {/*Trang Homepage - localhost:3002 */}
@@ -39,8 +66,9 @@ function App() {
           {/* <Route path="/about/list" component={ListMoviePage} /> */}
 
           {showLayoutHome(routesHome)}
-
+          {showLayoutAdmin(routesAdmin)}
           {/* trang khong tim thay */}
+          <Route path="/auth" component={AuthPage} />
           <Route path="" component={PageNotFound} />
         </Switch>
       </div>
